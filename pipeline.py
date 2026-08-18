@@ -16,7 +16,7 @@ def run_full_pipeline():
     trigger_path_traversal()
     trigger_dns_exfiltration()
 
-    # Pause briefly for log ingestion into Splunk
+    # Pause for log ingestion into Splunk
     print("\n[*] Waiting 8 seconds for Splunk log ingestion...")
     time.sleep(8)
 

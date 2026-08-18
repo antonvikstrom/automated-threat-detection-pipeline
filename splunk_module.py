@@ -59,13 +59,11 @@ def check_splunk_detection(spl_query, search_name, time_range="-5m"):
 if __name__ == "__main__":
     print("=== Step 2: Executing Splunk SIEM Detection Verification ===")
 
-    # Audit Web Path Traversal logs
     web_attacker_ip = check_splunk_detection(
         spl_query='index=* "etc/passwd"',
         search_name="Web Path Traversal Attack"
     )
 
-    # Audit Covert DNS Exfiltration logs
     dns_attacker_ip = check_splunk_detection(
         spl_query='index=* "exfil.lab"',
         search_name="Covert DNS Exfiltration"

