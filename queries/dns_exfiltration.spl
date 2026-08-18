@@ -1,0 +1,3 @@
+index=* sourcetype=syslog "exfil.lab"
+| rex field=_raw "info:\s+(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+(?<query_domain>[A-Za-z0-9\=\.]+\.exfil\.lab)"
+| stats count, values(client_ip) as attacker_ip by query_domain
