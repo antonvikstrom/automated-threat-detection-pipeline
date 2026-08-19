@@ -1,10 +1,10 @@
 import time
-from attack_module import trigger_dns_exfiltration, trigger_path_traversal
-from splunk_module import check_splunk_detection
-from threat_intel import check_ip_reputation
+from modules.attack_module import trigger_dns_exfiltration, trigger_path_traversal
+from modules.splunk_module import check_splunk_detection
+from modules.threat_intel import check_ip_reputation
 
 
-def run_full_pipeline():
+def run_full_pipeline(): 
     print("==================================================")
     print("  AUTOMATED DETECTION & ENRICHMENT PIPELINE")
     print("==================================================")
