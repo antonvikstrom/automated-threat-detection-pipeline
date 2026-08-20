@@ -4,6 +4,10 @@ An automated SOC pipeline built on Kali Linux that simulates web and DNS attacks
 
 ---
 
+📄 **Complete Technical Report:** Download the full [Project 2 Writeup (PDF)](assets/project-2-writeup.pdf) for complete step-by-step implementation logs, extended troubleshooting notes, and screenshots.
+
+---
+
 ## 🛠️ Quick Start & Usage
 
 1. **Clone the repository:**
