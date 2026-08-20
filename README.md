@@ -62,6 +62,8 @@ After some troubleshooting, I found out that the new pass rule I created for por
 
 I edited the rule source to `OPT3 subnets`, saved, and applied the changes. Re-testing with `netcat` immediately showed an open port, and running `python test_splunk_conn.py` returned a clean `[SUCCESS]` response.
 
+![Master Pipeline Terminal Output](assets/pipeline-execution.png)
+
 ---
 
 ## Module 2: Automated Attack Simulation & SIEM Detection Audit
@@ -156,7 +158,7 @@ index=linux sourcetype="docker:json" ("*etc/passwd*" OR "*../*" OR "*%2e%2e%2f*"
 
 * **MITRE ATT&CK Mapping:** T1190 (Exploit Public-Facing Application) & T1083 (File and Directory Discovery)
 
-
+![Splunk LFI Detection & Regex Field Extraction](assets/splunk-lfi-detection-results.png)
 
 ### Building the DNS Exfiltration Rule
 
