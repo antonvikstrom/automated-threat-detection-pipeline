@@ -4,7 +4,7 @@ An automated SOC pipeline built on Kali Linux that simulates web and DNS attacks
 
 ---
 
-📄 **Complete Technical Report:** Download the full [Project 2 Writeup (PDF)](assets/project-2-writeup.pdf) for complete step-by-step implementation logs, extended troubleshooting notes, and screenshots.
+📄 **Complete Technical Report:** Download the full [Project 2 Writeup (PDF)](report/project-2-writeup.pdf) for complete step-by-step implementation logs, extended troubleshooting notes, and screenshots.
 
 ---
 
@@ -37,6 +37,8 @@ python pipeline.py
 * `splunk_module.py`: Audits Splunk over the REST API (port 8089) to verify log ingestion.
 * `threat_intel.py`: Checks if attacker IPs are internal or queries AbuseIPDB for external reputation.
 * `queries/`: Custom SPL correlation rules for Splunk.
+* `assets/`: Screenshots and diagrams used in documentation.  
+* `report/`: Complete PDF case study report with high-resolution screenshots and detailed logs.
 
 ---
 
