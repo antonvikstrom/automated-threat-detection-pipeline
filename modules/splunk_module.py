@@ -8,7 +8,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 load_dotenv()
 
-SPLUNK_HOST = os.getenv("SPLUNK_HOST", "10.1.1.10")
+SPLUNK_HOST = os.getenv("SPLUNK_HOST")
 SPLUNK_PORT = os.getenv("SPLUNK_PORT", "8089")
 SPLUNK_TOKEN = os.getenv("SPLUNK_TOKEN")
 

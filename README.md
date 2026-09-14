@@ -4,9 +4,7 @@ An automated SOC pipeline built on Kali Linux that simulates web and DNS attacks
 
 ---
 
-📄 **Complete Technical Report:** Download the full [Project 2 Writeup (PDF)](report/project-2-writeup.pdf) for complete step-by-step implementation logs, extended troubleshooting notes, and screenshots.
-
----
+📄 **Complete Technical Report:** [Project 2 Writeup (PDF)](report/project-2-writeup.pdf)
 
 ## 🛠️ Quick Start & Usage
 
@@ -28,7 +26,6 @@ cp .env.example .env
 python pipeline.py
 
 ```
----
 
 ## 📂 Repository Layout
 
@@ -39,8 +36,6 @@ python pipeline.py
 * `queries/`: Custom SPL correlation rules for Splunk.
 * `assets/`: Screenshots and diagrams used in documentation.  
 * `report/`: Complete PDF case study report with high-resolution screenshots and detailed logs.
-
----
 
 ## Module 1: Environment Setup & API Connection
 
@@ -66,8 +61,6 @@ I edited the rule source to `OPT3 subnets`, saved, and applied the changes. Re-t
 
 ![Master Pipeline Terminal Output](assets/pipeline-execution.png)
 
----
-
 ## Module 2: Automated Attack Simulation & SIEM Detection Audit
 
 ### Building the Attack Script (`attack_module.py`)
@@ -78,7 +71,6 @@ Next, I created `attack_module.py` to simulate two different attack techniques f
 
 
 2. **Covert DNS Exfiltration:** Encodes a sensitive text string into Base32 and embeds it inside a DNS subdomain query (like `INHU4RSJIRCU4VCJIFGF.exfil.lab`). To ensure the request always goes directly to pfSense (`10.1.4.1`) regardless of Kali's system DNS configuration, I had the script send a raw UDP DNS packet directly to port 53.
-
 
 
 ### Automating SIEM Verification (`splunk_module.py`)
@@ -126,8 +118,6 @@ To finish the pipeline, I wrote `threat_intel.py` to enrich the extracted IP add
 
 
 Running `python pipeline.py` executes the whole flow end-to-end: it fires the web and DNS attacks, pauses briefly for Splunk to ingest the logs, checks the SIEM over the API, and enriches the attacker IP in less than 15 seconds.
-
----
 
 ## Module 3: Writing & Tuning Splunk Detections (SPL Rules)
 
@@ -190,8 +180,6 @@ index=* sourcetype=syslog "exfil.lab"
 * **MITRE ATT&CK Mapping:** T1071.004 (Application Layer Protocol: DNS) & T1048.003 (Exfiltration Over Alternative Protocol)
 
 
-
----
 
 ## Project 2 Wrap-Up & Key Takeaways
 
