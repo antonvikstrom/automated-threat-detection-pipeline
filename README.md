@@ -191,7 +191,7 @@ To keep my detection rules saved and version-controlled, I created a `queries/` 
 
 ## SIEM Telemetry & Detection Dashboard
 
-![Splunk SOC Dashboard](docs/assets/splunk-dashboard-project1-2.png)
+![Splunk SOC Dashboard](assets/splunk-dashboard-project1-2.png)
 
 *Splunk Dashboard Studio view monitoring multi-zone enterprise telemetry, active reporting endpoints, ingestion timelines, and real-time alert triage for automated adversary simulations (e.g., Web LFI / Path Traversal).*
 
