@@ -179,23 +179,13 @@ index=* sourcetype=syslog "exfil.lab"
 
 * **MITRE ATT&CK Mapping:** T1071.004 (Application Layer Protocol: DNS) & T1048.003 (Exfiltration Over Alternative Protocol)
 
-
-
-## Project 2 Wrap-Up & Key Takeaways
-
-To keep my detection rules saved and version-controlled, I created a `queries/` folder in my GitHub repository and added both files:
-
-* `queries/lfi_detection.spl`
-
-* `queries/dns_exfiltration.spl`
-
 ## SIEM Telemetry & Detection Dashboard
 
 ![Splunk SOC Dashboard](assets/splunk-dashboard-project1-2.png)
 
 *Splunk Dashboard Studio view monitoring multi-zone enterprise telemetry, active reporting endpoints, ingestion timelines, and real-time alert triage for automated adversary simulations (e.g., Web LFI / Path Traversal).*
 
-### Key Takeaways & Lessons Learned
+## Key Takeaways & Lessons Learned
 
 * **Log Ingestion & Parsing:** Learned that containerized applications (like Dockerized DVWA) nest logs inside JSON wrapper fields (`sourcetype="docker:json"`), requiring inline regex (`rex`) to extract field values like `src_ip` and `uri`.
 
