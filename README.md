@@ -1,4 +1,4 @@
-# Project 2: Automated Adversary Emulation & SIEM Detections
+# Automated Adversary Emulation & SIEM Detections
 
 **MITRE ATT&CK:** T1190 (Exploit Public-Facing Application) · T1071.004 (Application Layer Protocol: DNS)
 
